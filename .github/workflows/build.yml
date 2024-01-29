@@ -104,7 +104,9 @@ jobs:
             && matrix.os == 'ubuntu-latest'
             && matrix.ghc == '9.6.3'
         run: >
-          mv ${{ env.cabal-build-dir }}/build/*/*/*/doc/html/* gh-pages
+          mkdir gh-pages
+
+          mv ${{ env.cabal-build-dir }}/build/*/*/*/doc/html/* gh-pages/
 
           touch gh-pages/.nojekyll
 
